@@ -1,6 +1,9 @@
 ![Problema do Caixeiro Viajante](https://i.ibb.co/FB9kQnV/TSP.png)
-# Implementação da heurística do Travelling Salesperson Problem (Problema do Caixeiro-Viajante) utilizando a Nearest Neighbour Search (busca por vizinho mais próximo).
+
+Implementação do Problema do Caixeiro-Viajante (Travelling Salesperson Problem) utilizando a heurística da busca pelo vizinho mais próximo (Nearest Neighbour Search).
+
 ## Descrição do problema
+
 O Problema do Caixeiro Viajante (PCV) ou Travelling Salesperson Problem (TSP) é um problema que tenta determinar a menor rota para percorrer uma série de cidades (visitando uma única vez cada uma delas) e, no fim do percurso, retornando à cidade de origem. Ele é um problema de otimização NP-difícil inspirado na necessidade dos vendedores em realizar entregas em diversos locais percorrendo o menor caminho possível, reduzindo o tempo necessário para a viagem e os possíveis custos com transporte e combustível.
 
 ## Heurística utilizada para a implementação
