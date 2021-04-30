@@ -18,7 +18,6 @@ Lista* makeList();
 void showError(int);
 void freeList(Lista*);
 void printList(Lista*);
-void removeSpaces(char *);
 int howManyDigits(int, int);
 double calculateDistance(ponto, ponto);
 void putCoordinatesInMatrix(int, ponto *);
@@ -81,7 +80,7 @@ void takeInput() {
 void allocateCoordinates(ponto *coordenadas, string &coordenadasInput, int coordenadasLength, int MAX_CIDADES) {
     bool nextDigit = false;         bool negativeNum = false;
     short int valueDigits = 0;      short int allocatedNumbers = 0;
- 
+
     for(int l = 0, i = 0; l < coordenadasLength; ++l) {
 
         if(coordenadasInput[l] == '-') {    // Se for um número negativo, ativar o negativeNum
@@ -131,34 +130,14 @@ void allocateStartingCoordinates(string &s_coordenada_inicial, ponto *p_coordena
             s_coordenada_inicial[j] = ' ';
         }
     }
- 
-    char char_array[lengthCoordenadaInicial + 1];
-    strcpy(char_array, s_coordenada_inicial.c_str());
 
-    removeSpaces(char_array);
- 
-    string someString(char_array);
-
-    p_coordenada_inicial->x = stoi(someString);
+    p_coordenada_inicial->x = stoi(s_coordenada_inicial);
     
     for(int w = 0; w < howManyDigits(p_coordenada_inicial->x, 0); w++) {
-        someString[w] = ' ';
+        s_coordenada_inicial[w] = ' ';
     }
  
-    p_coordenada_inicial->y = stoi(someString);
-}
-
-void removeSpaces(char *str) {
-    int contador = 0;
-  
-    int i = 0;
-    for (i = 0; str[i]; i++)
-        if (str[i] != ' ') {
-            str[contador++] = str[i];
-            str[contador++] = ' ';
-            i++;
-        }
-    str[contador] = '\0';
+    p_coordenada_inicial->y = stoi(s_coordenada_inicial);
 }
 
 bool verifyBelonging(int MAX_CIDADES, ponto *coordenadas, ponto *p_coordenada_inicial, bool coordenada_pertence) {
